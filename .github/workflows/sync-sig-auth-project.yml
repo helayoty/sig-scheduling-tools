@@ -1,4 +1,4 @@
-name: sig-auth-project-board-sync
+name: sig-scheduling-project-board-sync
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Sync sig-auth project board
+    name: Sync sig-scheduling project board
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
@@ -17,7 +17,7 @@ jobs:
     - uses: actions/setup-go@v3
       with:
         go-version: '1.19'
-    - name: Sync sig-auth project board - kubernetes org
+    - name: Sync sig-scheduling project board - kubernetes org
       env:
         GITHUB_TOKEN: ${{ secrets.SYNC_PROJECTS_PAT }}
       run: |

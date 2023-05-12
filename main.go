@@ -33,7 +33,7 @@ const (
 	// orgName is the name of the GitHub organization to query.
 	orgName = "kubernetes"
 	// projectName is the name of the GitHub project to query.
-	projectName = "SIG Auth"
+	projectName = "SIG Scheduling"
 )
 
 type ghClient struct {
@@ -64,7 +64,7 @@ func main() {
 	for _, repo := range repos {
 		fmt.Printf("Looking for issues and PRs in %s/%s\n", orgName, *repo.Name)
 
-		items, err := client.listIssuesAndPullRequests(ctx, orgName, *repo.Name, "sig/auth")
+		items, err := client.listIssuesAndPullRequests(ctx, orgName, *repo.Name, "sig/scheduling")
 		must(err)
 
 		fmt.Printf("found %d in repo %s/%s\n", len(items), orgName, *repo.Name)

@@ -1,4 +1,4 @@
-module sigs.k8s.io/sig-auth-tools
+module sigs.k8s.io/sig-scheduling-tools
 
 go 1.19
 
